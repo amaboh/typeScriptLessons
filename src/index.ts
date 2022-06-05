@@ -22,8 +22,10 @@ const reviews = [
 
 ]
 
-function showReviewTotal (value: number, reviewer:string){
-    reviewTotalDisplay.innerHTML = 'review total ' + value.toString() + '| last reviewed by ' + reviewer
+function showReviewTotal (value: number, reviewer:string, isLoyal: boolean){
+
+    const loyaLCustomer = isLoyal === true ? "⭐️" : "";
+    reviewTotalDisplay.innerHTML = 'review total ' + value.toString() + '| last reviewed by ' + reviewer + " " + loyaLCustomer;
 }
 
-showReviewTotal(reviews.length, reviews[0].name)
+showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
